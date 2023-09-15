@@ -1,4 +1,4 @@
-const Cart = () => {
+const Cart = ({selectCourse}) => {
   return (
     <>
       <div>
@@ -8,7 +8,9 @@ const Cart = () => {
             <div className="divider"></div> 
             <h3 className="font-bold text-xl">Course Name</h3>
             <ol>
-                <li>Introduction to Python</li>
+                {selectCourse.map((course) => (
+                  <li key={course.id} className="py-1">{course.title}</li>
+                ))}
             </ol>
             <div className="divider mt=0 mb-0"></div> 
            <h3 className="text-base font-semibold">Total Credit Hour: 12</h3>

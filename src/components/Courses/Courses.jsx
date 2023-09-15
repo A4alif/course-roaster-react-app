@@ -4,11 +4,17 @@ import { useEffect, useState } from "react";
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
+  const [selectCourse, setSelectCourse] = useState([])
   useEffect(() => {
     fetch("./data.json")
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);
+
+  const handleCourseAdd = (course) => {
+    setSelectCourse([...selectCourse, course])
+  }
+  
 
   return (
     <>
@@ -47,46 +53,18 @@ const Courses = () => {
                         </div>
                       </div>
                       <div className="card-actions  ">
-                        <button className="btn btn-info w-full text-white">
+                        <button onClick={() => handleCourseAdd(course)} className="btn btn-info w-full text-white">
                           Select
                         </button>
                       </div>
                     </div>
                   </div>
                 ))}
-                {/* <div className="card card-compact  bg-base-100 shadow-xl">
-                  <figure className="pt-4">
-                    <img src={python} alt="Shoes" />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title text-lg font-semibold">
-                      Introduction to OOP Python
-                    </h2>
-                    <p className="text-sm font-normal leading-6">
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout.
-                    </p>
-                    <div className="flex justify-between text-base text-gray-600 py-4">
-                      <div className="flex items-center space-x-3">
-                        <BsCurrencyDollar />
-                        <span>Price: 15000</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <BsBook />
-                        <p>Credit: 1hr</p>
-                      </div>
-                    </div>
-                    <div className="card-actions  ">
-                      <button className="btn btn-primary w-full">Select</button>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
             {/* right side */}
             <div className="w-full md:w-1/4">
-              <Cart />
+              <Cart selectCourse={selectCourse} />
             </div>
           </div>
         </div>
