@@ -17,12 +17,20 @@ const Courses = () => {
 
   const handleCourseAdd = (course) => {
     const isExist = selectCourse.find((item) => item.id === course.id);
+    let credit = course.credit;
+    let price = course.price;
     if (isExist) {
       Swal.fire({
         icon: "warning",
         title: "Course Already Added",
       });
     } else {
+      selectCourse.forEach((item) => {
+         credit = credit + item.credit;
+         price = price + item.price;
+      });
+      setTotalCredit(credit)
+      setTotalPrice(price)
       setSelectCourse([...selectCourse, course]);
     }
   };
