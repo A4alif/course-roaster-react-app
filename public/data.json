@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to C Programming",
+    "img": "https://i.postimg.cc/brB0P5RX/cprogramming.png",
+    "desc": "Discover the fundamentals of C programming in this introductory course. Learn syntax, data structures, and algorithms to build your coding skills.",
+    "price": 15000,
+    "credit": 1
+  },
+  {
+    "id": 2,
+    "title": "Introduction to Algorithms",
+    "img": "https://i.postimg.cc/SRDTMV7V/algorithm.png",
+    "desc": "Explore the world of algorithms. Master problem-solving, algorithm design, and analysis. Unlock the key to efficient coding and problem-solving strategies",
+    "price": 25000,
+    "credit": 2
+  },
+  {
+    "id": 3,
+    "title": "Introduction to C++ for DSA",
+    "img": "https://i.postimg.cc/XJxcHqGY/cplusplusprogramming.png",
+    "desc": "Learn C++ for Data Structures and Algorithms. Build a strong foundation in C++ programming while mastering essential concepts for efficient problem-solving.",
+    "price": 10000,
+    "credit": 10
+  },
+  {
+    "id": 4,
+    "title": "Basic Data Structures",
+    "img": "https://i.postimg.cc/rpMrBcL0/datastructure.png",
+    "desc": "Master foundational data structures. Dive into arrays, linked lists, stacks, and queues. Develop essential skills for efficient data manipulation and problem-solving.",
+    "price": 35000,
+    "credit": 5
+  },
+  {
+    "id": 5,
+    "title": "Introduction to OOP Python",
+    "img": "https://i.postimg.cc/4dMQtdY7/python.png",
+    "desc": "Unlock object-oriented Python. Explore classes, inheritance, and encapsulation. Build a solid foundation for creating modular, efficient, and maintainable code.",
+    "price": 19000,
+    "credit": 5
+  },
+  {
+    "id": 6,
+    "title": "Software Engineering",
+    "img": "https://i.postimg.cc/fRK7C53h/software-engineering.png",
+    "desc": "Delve into Software Engineering. Learn design patterns, project management, and coding practices. Develop skills to create robust, scalable, and efficient software solutions.",
+    "price": 23000,
+    "credit": 2
+  },
+  {
+    "id": 7,
+    "title": "AWS, Cloud Computing",
+    "img": "https://i.postimg.cc/L6WvFJyq/awscloud.png",
+    "desc": "Discover AWS and Cloud Computing. Dive into cloud services, infrastructure as code, and scaling. Gain expertise in managing and optimizing cloud-based solutions.",
+    "price": 35000,
+    "credit": 5
+  },
+  {
+    "id": 8,
+    "title": "Database (MYSQL)",
+    "img": "https://i.postimg.cc/tJw6wxXp/databse.png",
+    "desc": "Explore MySQL Database. Learn SQL, database design, and management. Acquire skills to build, query, and maintain efficient relational databases for various applications.",
+    "price": 19000,
+    "credit": 5
+  },
+  {
+    "id": 9,
+    "title": "Problem-Solving Part",
+    "img": "https://i.postimg.cc/vZdgnMTq/problemsolving.png",
+    "desc": "Enhance problem-solving skills. Develop critical thinking, analytical, and creative problem-solving approaches. Solve real-world challenges with confidence and precision.",
+    "price": 23000,
+    "credit": 2
+  }
+]

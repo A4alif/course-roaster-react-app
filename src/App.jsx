@@ -1,8 +1,11 @@
+import Courses from "./components/Courses/Courses";
+import Header from "./components/Header/Header";
+
 function App() {
   return (
     <>
-      <h1 className="text-5xl font-bold text-center py-5">Course Registration</h1>
-      
+      <Header />
+      <Courses />
     </>
   );
 }
