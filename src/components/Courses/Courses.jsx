@@ -1,10 +1,14 @@
 import { BsCurrencyDollar, BsBook } from "react-icons/bs";
 import Cart from "../Cart/Cart";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
-  const [selectCourse, setSelectCourse] = useState([])
+  const [selectCourse, setSelectCourse] = useState([]);
+  const [creditRemaining, setCreditRemaining] = useState(0);
+  const [totalCredit, setTotalCredit] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
     fetch("./data.json")
       .then((res) => res.json())
@@ -12,9 +16,16 @@ const Courses = () => {
   }, []);
 
   const handleCourseAdd = (course) => {
-    setSelectCourse([...selectCourse, course])
-  }
-  
+    const isExist = selectCourse.find((item) => item.id === course.id);
+    if (isExist) {
+      Swal.fire({
+        icon: "warning",
+        title: "Course Already Added",
+      });
+    } else {
+      setSelectCourse([...selectCourse, course]);
+    }
+  };
 
   return (
     <>
@@ -53,7 +64,10 @@ const Courses = () => {
                         </div>
                       </div>
                       <div className="card-actions  ">
-                        <button onClick={() => handleCourseAdd(course)} className="btn btn-info w-full text-white">
+                        <button
+                          onClick={() => handleCourseAdd(course)}
+                          className="btn btn-info w-full text-white"
+                        >
                           Select
                         </button>
                       </div>
@@ -64,7 +78,12 @@ const Courses = () => {
             </div>
             {/* right side */}
             <div className="w-full md:w-1/4">
-              <Cart selectCourse={selectCourse} />
+              <Cart
+                selectCourse={selectCourse}
+                creditRemaining={creditRemaining}
+                totalCredit={totalCredit}
+                totalPrice={totalPrice}
+              />
             </div>
           </div>
         </div>
