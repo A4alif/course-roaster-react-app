@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [selectCourse, setSelectCourse] = useState([]);
-  const [creditRemaining, setCreditRemaining] = useState(0);
+  const [creditRemaining, setCreditRemaining] = useState(20);
   const [totalCredit, setTotalCredit] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
@@ -26,12 +26,21 @@ const Courses = () => {
       });
     } else {
       selectCourse.forEach((item) => {
-         credit = credit + item.credit;
-         price = price + item.price;
+        credit = credit + item.credit;
+        price = price + item.price;
       });
-      setTotalCredit(credit)
-      setTotalPrice(price)
-      setSelectCourse([...selectCourse, course]);
+      let totalCreditRemaining = 20 - credit;
+      if (credit > 20) {
+        Swal.fire({
+          icon: "info",
+          title: "Credit Limit Crossed",
+        });
+      } else {
+        setTotalCredit(credit);
+        setTotalPrice(price);
+        setCreditRemaining(totalCreditRemaining);
+        setSelectCourse([...selectCourse, course]);
+      }
     }
   };
 
@@ -39,13 +48,9 @@ const Courses = () => {
     <>
       <main>
         <div className="container mx-auto px-4 pb-16">
-          {/* flex */}
           <div className="flex flex-col  md:flex-row md:space-x-6 space-y-6 md:space-y-0">
-            {/* left side */}
             <div className=" w-full md:w-3/4">
-              {/* grid container */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* single card */}
                 {courses.map((course) => (
                   <div
                     key={course.id}
@@ -84,7 +89,7 @@ const Courses = () => {
                 ))}
               </div>
             </div>
-            {/* right side */}
+
             <div className="w-full md:w-1/4">
               <Cart
                 selectCourse={selectCourse}

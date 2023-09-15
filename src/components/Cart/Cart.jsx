@@ -8,8 +8,8 @@ const Cart = ({selectCourse, creditRemaining, totalCredit, totalPrice}) => {
             <div className="divider"></div> 
             <h3 className="font-bold text-xl">Course Name</h3>
             <ol>
-                {selectCourse.map((course) => (
-                  <li key={course.id} className="py-1">{course.title}</li>
+                {selectCourse.map((course, index) => (
+                  <li key={course.id} className="py-1">{index+1}. {course.title}</li>
                 ))}
             </ol>
             <div className="divider mt=0 mb-0"></div> 
