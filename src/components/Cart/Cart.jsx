@@ -4,7 +4,7 @@ const Cart = ({selectCourse, creditRemaining, totalCredit, totalPrice}) => {
       <div>
         <div className="card  bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title">Credit Hour Remaining {creditRemaining} hr</h2>
+            <h2 className="card-title text-blue-500">Credit Hour Remaining {creditRemaining} hr</h2>
             <div className="divider"></div> 
             <h3 className="font-bold text-xl">Course Name</h3>
             <ol>
